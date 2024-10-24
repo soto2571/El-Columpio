@@ -1,0 +1,397 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+	list-style: none;
+	text-decoration: none;
+	scroll-behavior: smooth;
+}
+:root{
+	--bg-color: #E0DFDB;
+	--text-color: #E0DFDB;
+	--main-color: #5F3B28;
+	--big-font: 4.5rem;
+	--h2-font: 3.3rem;
+	--h3-font: 2rem;
+	--normal-font: 1rem;
+}
+
+body{
+	background: var(--bg-color);
+	color: var(--text-color);
+}
+header{
+	width: 100%;
+	height: 10%;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color:#4a2a19;
+	padding: 20px 14%;
+	transition: all .35s ease;
+}
+.logo{
+	font-size: 28px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	color: var(--text-color);
+}
+.navlist{
+	display: flex;
+}
+.navlist a{
+	color: var(--text-color);
+	font-weight: 600;
+	padding: 10px 25px;
+	font-size: var(--normal-font);
+	transition: all .36s ease;
+}
+.navlist a:hover{
+	color:rgba(9, 158, 22, 0.839);
+}
+.header-icons i{
+	font-size: 32px;
+	color: var(--text-color);
+	margin-right: 20px;
+	transition: all .36s ease;
+}
+.header-icons i:hover{
+	color: var(--main-color);
+}
+.logo-img {
+    width: 80px; /* Adjust this value as needed */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 50%;
+}
+#menu-icon{
+	font-size: 34px;
+	color: var(--text-color);
+	z-index: 10001;
+	margin-right: 20px;
+	display: none;
+}
+
+/* Typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%; /* Will now be set based on the text size */
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+#typed-text {
+    border-right: 2px solid white; /* No need for a separate border, since we're using the ::after pseudo-element */
+	margin-left: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    max-width: fit-content; /* Limit the width to the size of the content */
+    animation: typing 6s steps(50, end) forwards; /* Typing animation, stops after it finishes */
+    animation-fill-mode: forwards; /* Ensures the text stays visible */
+}
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    #typed-text {
+        animation-duration: 8s; /* Slower for larger screens */
+		animation: typing 10s steps(70, end) forwards;
+        animation-iteration-count: 1; /* Only plays once */
+    }
+}
+
+@media (max-width: 767px) {
+    #typed-text {
+        animation-duration: 5s; /* Faster for smaller screens */
+        animation-iteration-count: 1; /* Only plays once */
+    }
+}
+
+section{
+	padding: 100px 14%;
+}.home {
+	min-height: 100vh;
+	width: 100%;
+	background: url(../img/background.JPG) no-repeat center top;
+	background-size: cover;
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	align-items: center;
+}
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+    z-index: 1; /* Ensures the overlay is on top of the background */
+}
+
+@media (max-width: 768px) {
+	.home {
+		background-position: center;
+		background-size: contain; /* Asegura que la imagen sea visible en pantallas pequeñas */
+	}
+}
+.home-text {
+    position: relative;
+    z-index: 2; /* Ensures the text is on top of the overlay */
+	text-align: center;
+	
+}
+
+.home-text h1{
+	font-size: var(--big-font);
+	font-weight: 800;
+	line-height: 1.2;
+	letter-spacing: .6rem;
+	margin-bottom: 1.4rem;
+}
+.home-text span{
+	font-size: var(--h2-font);
+}
+.home-text p{
+	font-size: var(--normal-font);
+	font-weight: 500;
+	margin-bottom: 3rem;
+	letter-spacing: .2rem;
+}
+.btn{
+	display: inline-block;
+	padding: 13px 25px;
+	background: var(--main-color);
+	color: #ffffff;
+	font-size: 15px;
+	letter-spacing: 1px;
+	font-weight: 600;
+	border-radius: 5px;
+	transition: all .35s ease;
+}
+.btn:hover{
+	transform: translateY(-5px);
+	background: var(--text-color);
+	color: #5F3B28;
+}
+/* Info Section Styling */
+.info {
+    padding: 50px 14%;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.info h2 {
+    font-size: var(--h2-font);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--main-color);
+}
+
+.info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+	COLOR: var(--main-color)
+}
+
+.info ul li {
+    font-size: var(--normal-font);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+	COLOR: var(--main-color)
+}
+
+.info p {
+    font-size: var(--normal-font);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+	COLOR: var(--main-color)
+}
+
+/* Styling for Google Map iframe */
+.map-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.map-container iframe {
+    border: none;
+    width: 100%;
+    max-width: 600px; /* Limit the max size */
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+    .info {
+        padding: 50px 5%;
+    }
+
+    .info h2 {
+        font-size: 2.5rem;
+    }
+
+    .map-container iframe, 
+    .info a img {
+        max-width: 100%; /* Allow the map or image to fill the screen width on smaller devices */
+        height: auto;
+    }
+}
+.About {
+    position: relative;
+    height: 20vh; /* Adjust height to fit your desired section size */
+    width: 100%;
+    background: url(../img/IMG_0541.jpg) no-repeat center center/cover;
+    display: flex;
+	justify-content: center;
+    align-items: center;
+
+	border: 2px solid rgb(0, 0, 0);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+/* Black mask overlay */
+.About::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1; /* Ensure it's above the background */
+}
+.about-text {
+	z-index: 2;
+	text-align: center;
+	position: relative;
+	font-size: 5vw; /* 5% of the viewport width */
+	font-weight: 1000;
+	line-height: 1.2;
+	letter-spacing: .9rem;
+	margin-bottom: 1.0rem;
+}
+/* Hidden state before scroll */
+.owner-section {
+    opacity: 0;
+    transform: translateY(100px); /* Move it down initially */
+    transition: all 2.6s ease-out; /* Smooth transition */
+}
+
+/* Class to make it visible when in view */
+.owner-section.visible {
+    opacity: 1;
+    transform: translateY(0); /* Move it back to its original position */
+}
+
+.owner-title {
+    margin-bottom: 2rem;
+	font-size: 1.8rem;
+	COLOR: var(--main-color)
+}
+
+.owner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.owner-image img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.owner-text {
+    max-width: 100%; /* Text occupies half of the available width */
+    text-align: left;
+	background-color: #4a2a19;
+}
+
+.owner-text h5 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+	padding: 20px;
+}
+
+.owner-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+	padding: 20px;
+	max-width: 100%;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .owner-content {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center;
+    }
+    
+    .owner-text {
+        max-width: 100%; /* Make text full-width */
+    }
+}
+/* Hidden state for any section that should fade in */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(100px); /* Starts 100px lower */
+    transition: all 1.5s ease-out; /* Slower transition for appearance */
+}
+
+/* Class to make the section visible */
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0); /* Moves it to its original position */
+}
+
+.footer {
+    background-color:#4a2a19; /* Dark background */
+    color: white; /* White text */
+    padding: 20px; /* Space inside the footer */
+    text-align: center; /* Center text */
+}
+
+.footer h2 {
+    margin: 0 0 10px; /* No margin on top, small margin at the bottom */
+}
+
+.footer p {
+    margin: 5px 0; /* Small margins for paragraphs */
+}
+
+.contact-info {
+    margin: 15px 0; /* Margin for the contact info section */
+}
+
+.social-media {
+    display: flex; /* Flexbox for social media links */
+    justify-content: center; /* Center links */
+    margin-top: 10px; /* Space above social media links */
+}
+
+.social-media a {
+    margin: 0 10px; /* Space between links */
+    color: white; /* White text for links */
+    text-decoration: none; /* No underline */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.social-media a:hover {
+    color:rgba(9, 158, 22, 0.839);
+}
