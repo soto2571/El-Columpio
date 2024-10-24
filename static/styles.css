@@ -395,3 +395,107 @@ section{
 .social-media a:hover {
     color:rgba(9, 158, 22, 0.839);
 }
+/* For mobile screens */
+@media (max-width: 767px) {
+    header {
+        padding: 10px 5%; /* Reduce padding on smaller screens */
+    }
+    
+    .navlist a {
+        padding: 8px 10px;
+        font-size: 0.9rem; /* Smaller font for navigation links */
+    }
+
+    .logo {
+        font-size: 20px; /* Reduce logo size on mobile */
+    }
+
+    .home-text h1 {
+        font-size: 2.5rem; /* Smaller heading size */
+        letter-spacing: 0.3rem; /* Reduce letter spacing */
+    }
+
+    .home-text span {
+        font-size: 2rem; /* Reduce subheading size */
+    }
+
+    .home-text p {
+        font-size: 0.9rem; /* Smaller paragraph text */
+    }
+
+    .btn {
+        padding: 10px 20px; /* Slightly smaller button */
+        font-size: 0.9rem;
+    }
+
+    .info {
+        padding: 30px 5%; /* Reduce padding */
+    }
+
+    .owner-text h5 {
+        font-size: 1.2rem;
+    }
+
+    .footer {
+        padding: 10px; /* Reduce footer padding */
+    }
+
+    .footer h2 {
+        font-size: 1.2rem; /* Smaller footer heading */
+    }
+
+    .footer p {
+        font-size: 0.9rem; /* Smaller footer text */
+    }
+}
+/* Show the menu icon on smaller screens */
+@media (max-width: 767px) {
+    .navlist {
+        display: none; /* Hide navigation links */
+    }
+
+    #menu-icon {
+        display: block; /* Show menu icon */
+    }
+}
+/* Handle background for mobile */
+@media (max-width: 767px) {
+    .home {
+        background-size: cover; /* Ensure the background covers the screen */
+        background-position: center;
+    }
+
+    .owner-image img {
+        max-width: 100%; /* Make sure images don’t overflow */
+        height: auto;
+    }
+
+    .About {
+        height: auto; /* Let the height adapt based on content */
+    }
+
+    .about-text {
+        font-size: 8vw; /* Increase font size relative to the viewport */
+    }
+}
+/* Footer adjustments for mobile */
+@media (max-width: 767px) {
+    .footer {
+        padding: 10px; /* Reduce padding in the footer */
+    }
+
+    .social-media a {
+        font-size: 1rem; /* Adjust size of social media icons or links */
+    }
+}
+@media (max-width: 767px) {
+    .owner-content {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center;
+        text-align: center; /* Center-align text */
+    }
+
+    .owner-text, .owner-image {
+        width: 100%; /* Make text and image full width */
+    }
+}
