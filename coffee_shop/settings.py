@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mvwm%b6yi7=1ezfw$mpql_x59+d804xke=#32u&xod6xzkdtj_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://el-columpio.onrender.com']
+ALLOWED_HOSTS = ['el-columpio.onrender.com']
 
 
 # Application definition
