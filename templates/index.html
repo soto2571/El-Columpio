@@ -34,10 +34,10 @@
 
 <!----home--->
 {% load static %}
-<section class="home" id="home" style="background: url('{% static "images/background.JPG" %}') no-repeat center top;">
+<section class="home" id="home" style="background: url('{% static "images/background.JPG" %}') no-repeat center center; background-size: cover;">
     <div class="home-text">
-        <h1>El Columpio<br><span></h1>
-        <p id="typed-text">Coffe, Cake & Bistro Bar</p>
+        <h1>El Columpio<br><span></span></h1>
+        <p id="typed-text">Coffee, Cake & Bistro Bar</p>
     </div>
 </section>
 
@@ -55,7 +55,6 @@
         <p>Edif RIOP, Carr. 115 Km 12.1, Suite #1, Rincón, 00677</p>
 
         <a href="{% url 'reserve_seat' %}" class="btn">Make a Reservation</a>
-        
         <!-- Embedding Google Map -->
         <div class="map-container">
             <iframe 

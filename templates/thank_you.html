@@ -1,19 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Confirmation</title>
-    <link rel="stylesheet" type="text/css" href="static/styles.css">
-    
-    <link rel="stylesheet"
-  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</html>
-<body>
-    <h1>Thank you for your reservation!</h1>
-    <p>We’ve received your request and will see you soon.</p>
+    <title>Thank You</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="thank-you-page">
+    <div class="thank-you-container">
+        <h1>Thank You, {{ customer_name }}!</h1>
+        <p>We’ve received your reservation for {{ date|date:"F j, Y" }} and can't wait to see you soon!</p>
+
+        <br>
+        <img src="{% static 'images/calendario.png' %}" alt="Calendar" style="width: 200px; height: 200px; margin-bottom: 10px; margin-top: -50px;">
+
+        <!-- Contact Info -->
+<div class="contact-info">
+  <h3>For any questions or changes <br>please contact us at:</h3>
+  <h3>(787) 458-7393</h3>
+  <div class="social-media">
+      <a href="https://www.facebook.com/elcolumpio.rinconpr?mibextid=LQQJ4d" target="_blank">
+          <img src="{% static 'images/fb.png' %}" alt="Facebook" style="width: 50px; height: 50px; margin-right: 10px; margin-top: 4px;">
+      </a>
+      <a href="https://www.instagram.com/el_columpio_coffee?igsh=MTM0ZGRkYnJza2s1Ng==" target="_blank">
+          <img src="{% static 'images/ig.png' %}" alt="Instagram" style="width: 60px; height: 60px;">
+      </a>
+  </div>
+</div>
+
+        <!-- Back to Home Button -->
+        <div class="back-home">
+            <a href="{% url 'home' %}" class="btn" style="background-color: #4a2a19; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; text-decoration: none;">Go Back to Home</a>
+        </div>
+    </div>
 </body>
+</html>

@@ -102,33 +102,28 @@ header{
     animation: typing 6s steps(50, end) forwards; /* Typing animation, stops after it finishes */
     animation-fill-mode: forwards; /* Ensures the text stays visible */
 }
-/* Responsive adjustments */
-@media (min-width: 768px) {
-    #typed-text {
-        animation-duration: 8s; /* Slower for larger screens */
-		animation: typing 10s steps(70, end) forwards;
-        animation-iteration-count: 1; /* Only plays once */
-    }
+
+
+/* General section styles */
+section {
+    padding: 0; /* Remove default padding for full-page coverage */
+    margin: 0; /* Remove margin for alignment */
 }
 
-@media (max-width: 767px) {
-    #typed-text {
-        animation-duration: 5s; /* Faster for smaller screens */
-        animation-iteration-count: 1; /* Only plays once */
-    }
+/* Home section */
+.home {
+    min-height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    background: url("{% static 'images/background.JPG' %}") no-repeat center center; /* Center the background image */
+    background-size: cover; /* Ensure the image covers the entire section */
+    position: relative;
+    display: flex; /* Flexbox for centering content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    overflow: hidden; /* Prevent any overflow */
 }
 
-section{
-	padding: 100px 14%;
-}.home {
-	min-height: 100vh;
-	width: 100%;
-	background-size:contain;
-	position: relative;
-	display: grid;
-	grid-template-columns: repeat(1, 1fr);
-	align-items: center;
-}
+/* Overlay effect */
 .home::before {
     content: '';
     position: absolute;
@@ -136,38 +131,37 @@ section{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
-    z-index: 1; /* Ensures the overlay is on top of the background */
+    background-color: rgba(0, 0, 0, 0.5); /* Add semi-transparent dark overlay */
+    z-index: 1; /* Place overlay above the background image */
 }
 
-@media (max-width: 768px) {
-	.home {
-		background-position: center;
-		background-size: contain; /* Asegura que la imagen sea visible en pantallas pequeñas */
-	}
-}
+/* Text styles */
 .home-text {
-    position: relative;
-    z-index: 2; /* Ensures the text is on top of the overlay */
-	text-align: center;
-	
+    position: relative; /* Relative to ensure it's above the overlay */
+    z-index: 2; /* Above the overlay */
+    text-align: center;
+    color: #fff; /* White text for contrast */
+    padding: 20px; /* Add some padding if needed */
 }
 
-.home-text h1{
-	font-size: var(--big-font);
-	font-weight: 800;
-	line-height: 1.2;
-	letter-spacing: .6rem;
-	margin-bottom: 1.4rem;
+/* Heading styles */
+.home-text h1 {
+    font-size: 3rem; /* Adjust as needed */
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.4rem;
 }
-.home-text span{
-	font-size: var(--h2-font);
+
+/* Span inside heading */
+.home-text span {
+    font-size: 2rem; /* Adjust as needed */
 }
-.home-text p{
-	font-size: var(--normal-font);
-	font-weight: 500;
-	margin-bottom: 3rem;
-	letter-spacing: .2rem;
+
+/* Paragraph styles */
+.home-text p {
+    font-size: 1.2rem; /* Adjust as needed */
+    font-weight: 500;
+    margin-bottom: 3rem;
 }
 .btn{
 	display: inline-block;
@@ -236,20 +230,7 @@ section{
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-@media (max-width: 768px) {
-    .info {
-        padding: 50px 5%;
-    }
 
-    .info h2 {
-        font-size: 2.5rem;
-    }
-
-    .map-container iframe, 
-    .info a img {
-        max-width: 100%; /* Allow the map or image to fill the screen width on smaller devices */
-        height: auto;
-    }
 
 #reservation {
     padding: 20px;
@@ -386,17 +367,7 @@ section{
 	max-width: 100%;
 }
 
-/* Media Query for smaller screens */
-@media (max-width: 768px) {
-    .owner-content {
-        flex-direction: column; /* Stack image and text vertically */
-        text-align: center;
-    }
-    
-    .owner-text {
-        max-width: 100%; /* Make text full-width */
-    }
-}
+
 /* Hidden state for any section that should fade in */
 .fade-in-section {
     opacity: 0;
@@ -445,19 +416,83 @@ section{
 .social-media a:hover {
     color:rgba(9, 158, 22, 0.839);
 }
-/* For mobile screens */
+
+.thank-you-page {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background: url('/static/images/reserve.webp') no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.thank-you-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1; /* Ensure it's above the background */
+}
+
+.thank-you-container {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.thank-you-container h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.thank-you-container p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+/* General Responsive Adjustments */
+
+/* For smaller screens (max-width: 767px) */
 @media (max-width: 767px) {
-    header {
-        padding: 10px 5%; /* Reduce padding on smaller screens */
+    /* Typing Animation */
+    #typed-text {
+        animation-duration: 5s; /* Faster for smaller screens */
+        animation-iteration-count: 1; /* Only plays once */
     }
-    
-    .navlist a {
-        padding: 8px 10px;
-        font-size: 0.9rem; /* Smaller font for navigation links */
+
+    /* Header */
+    header {
+        padding: 10px 5%;
+    }
+
+    .navlist {
+        display: none; /* Hide navigation links */
+    }
+
+    #menu-icon {
+        display: block; /* Show menu icon */
     }
 
     .logo {
-        font-size: 20px; /* Reduce logo size on mobile */
+        font-size: 20px; /* Reduce logo size */
+    }
+
+    /* Home Section */
+    .home {
+        background-size: cover; /* Ensure the background covers the screen */
+        background-position: center;
     }
 
     .home-text h1 {
@@ -478,41 +513,20 @@ section{
         font-size: 0.9rem;
     }
 
-    .info {
-        padding: 30px 5%; /* Reduce padding */
+    /* About Section */
+    .About {
+        height: auto; /* Let the height adapt based on content */
     }
 
-    .owner-text h5 {
-        font-size: 1.2rem;
+    .about-text {
+        font-size: 8vw; /* Increase font size relative to viewport */
     }
 
-    .footer {
-        padding: 10px; /* Reduce footer padding */
-    }
-
-    .footer h2 {
-        font-size: 1.2rem; /* Smaller footer heading */
-    }
-
-    .footer p {
-        font-size: 0.9rem; /* Smaller footer text */
-    }
-}
-/* Show the menu icon on smaller screens */
-@media (max-width: 767px) {
-    .navlist {
-        display: none; /* Hide navigation links */
-    }
-
-    #menu-icon {
-        display: block; /* Show menu icon */
-    }
-}
-/* Handle background for mobile */
-@media (max-width: 767px) {
-    .home {
-        background-size: cover; /* Ensure the background covers the screen */
-        background-position: center;
+    /* Owner Section */
+    .owner-content {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center;
+        text-align: center;
     }
 
     .owner-image img {
@@ -520,33 +534,59 @@ section{
         height: auto;
     }
 
-    .About {
-        height: auto; /* Let the height adapt based on content */
+    .owner-text, .owner-image {
+        width: 100%; /* Make text and image full width */
     }
 
-    .about-text {
-        font-size: 8vw; /* Increase font size relative to the viewport */
+    .owner-text h5 {
+        font-size: 1.2rem;
     }
-}
-/* Footer adjustments for mobile */
-@media (max-width: 767px) {
+
+    /* Footer */
     .footer {
-        padding: 10px; /* Reduce padding in the footer */
+        padding: 10px; /* Reduce footer padding */
+    }
+
+    .footer h2 {
+        font-size: 1.2rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
     }
 
     .social-media a {
         font-size: 1rem; /* Adjust size of social media icons or links */
     }
 }
-@media (max-width: 767px) {
-    .owner-content {
-        flex-direction: column; /* Stack content vertically */
-        align-items: center;
-        text-align: center; /* Center-align text */
+
+/* For medium screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .home {
+        background-position: center;
+        background-size: contain; /* Ensure image visibility */
     }
 
-    .owner-text, .owner-image {
-        width: 100%; /* Make text and image full width */
+    .info {
+        padding: 50px 5%;
+    }
+
+    .info h2 {
+        font-size: 2.5rem;
+    }
+
+    .map-container iframe, 
+    .info a img {
+        max-width: 100%; /* Allow the map or image to fill the screen width */
+        height: auto;
     }
 }
+
+/* For larger screens (min-width: 768px) */
+@media (min-width: 768px) {
+    #typed-text {
+        animation-duration: 8s; /* Slower for larger screens */
+        animation: typing 10s steps(70, end) forwards;
+        animation-iteration-count: 1; /* Only plays once */
+    }
 }
